@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formas</title>
+    <link href="css/stils.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Formas un ievadlauku piemērs</h1>
+    <form>
+        <p>Šodienas datums <input name="datums"></p>
+        <p>Ja gribi uzzināt šodienas datumu, spied pogu DATUMS 
+            <input onclick="datums.value=new Date();" name="poga" value="DATUMS" type="button">
+        </p>
+        <p>Ja gribi izdzēst datumua lodziņa saturu, spied pogu RESET
+            <input value="RESET" type="reset">
+        </p>
+    </form>
+    <form>
+        <div>1.skaitlis<input type="text" name="sk1"> </div>
+        <div>
+             <script>
+        function calculateSum() {
+           
+            var sk1Value = parseFloat(document.getElementsByName('sk1')[0].value);
+            var sk2Value = parseFloat(document.getElementsByName('sk2')[0].value);
+
+            // Check if the input values are valid numbers
+            if (isNaN(sk1Value) || isNaN(sk2Value)) {
+                alert("Please enter valid numbers");
+                return;
+            }
+
+            // Calculate the sum
+            var sum = sk1Value + sk2Value;
+
+            // Display the result
+            document.getElementsByName('rez')[0].value = sum;
+        }
+    </script>
+</head>
+<body>
+ 
+    <div>
+        <input value="+" name="sask" onclick="calculateSum()" type="button">
+    </div>
+            
+         <input value ="-" name="atn"  onclick="rez.value=sk1.value-sk2.value" type="button">
+         
+             <input value ="/" name="dal"  onclick="rez.value=sk1.value/sk2.value" type="button">
+ <input value="X" name="reiz" onclick="rez.value=sk1.value*sk2.value" type="button">
+        </div>
+        <div>2.skaitlis<input type="text" name="sk2"> </div>
+        <hr>
+        <div>Rezultāts<input name="rez"> </div>
+    </form>
+</body>
+</html>
